@@ -8,7 +8,7 @@ SpwfSAInterface spwf(D8, D2, false);
 int main() {
     int err;    
     char * ssid = "NETGEAR-3G";
-    char * seckey = "pallinoo";  
+    char * seckey = "PASSWORD";
     
     pc.printf("\r\nX-NUCLEO-IDW01M1 mbed Application\r\n");     
     pc.printf("\r\nconnecting to AP\r\n");
@@ -32,7 +32,7 @@ int main() {
     pc.printf("\r\nconnecting to http://4.ifcfg.me\r\n");
     
     TCPSocket socket(&spwf);
-    err = socket.connect("4.ifcfg.me", 23);
+    err = socket.connect("IP", PORTA);
     if(err!=0) 
     {
       pc.printf("\r\nCould not connect to Socket, err = %d!!\r\n", err); 
